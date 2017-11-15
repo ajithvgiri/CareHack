@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context="softfruit.solutions.carehack.softfruit.solutions.quickdoc.calendar.CalendarActivity">
+=======
+    tools:context=".calendar.CalendarActivity">
+>>>>>>> dbecc554327c0d72cfd761d73905bc15a29de674
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

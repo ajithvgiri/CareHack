@@ -75,6 +75,7 @@ obj/
 .idea/scopes/scope_settings.xml
 .idea/dictionaries
 .idea/vcs.xml
+app/google-services.json
 .idea/jsLibraryMappings.xml
 .idea/datasources.xml
 .idea/dataSources.ids
