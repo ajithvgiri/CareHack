@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "softfruit.solutions.carehack"
+        applicationId "softfruit.solutions.quick"
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1

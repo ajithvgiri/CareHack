@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="softfruit.solutions.carehack">
+    package="softfruit.solutions.quickdoc">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeActionBar">
         <activity
-            android:name=".SplashActivity"
+            android:name="softfruit.solutions.quickdoc.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,10 +19,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PhoneAuthActivity"
+            android:name="softfruit.solutions.quickdoc.PhoneAuthActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
-        <activity android:name=".PhoneVerificationActivity"
+        <activity android:name="softfruit.solutions.quickdoc.PhoneVerificationActivity"
             android:theme="@style/AppThemeNoActionBar"/>
     </application>
 

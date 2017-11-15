@@ -1,4 +1,4 @@
-package softfruit.solutions.carehack
+package softfruit.solutions.quickdoc
 
 import android.content.Intent
 import android.os.Build

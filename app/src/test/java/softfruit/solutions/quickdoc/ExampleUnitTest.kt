@@ -1,4 +1,4 @@
-package softfruit.solutions.carehack
+package softfruit.solutions.quickdoc
 
 import org.junit.Test
 

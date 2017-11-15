@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="softfruit.solutions.carehack.PhoneVerificationActivity">
+    tools:context="softfruit.solutions.quickdoc.PhoneVerificationActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/logo" />
 
 
-    <softfruit.solutions.carehack.PinEntryEditText
+    <softfruit.solutions.quickdoc.PinEntryEditText
         android:id="@+id/pinEntryEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
