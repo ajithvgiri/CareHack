@@ -5,4 +5,5 @@
     <string name="xxx_xxx_xxxx">XXX XXX XXXX</string>
     <string name="_91">+91</string>
     <string name="continue_">Continue</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
 </resources>
