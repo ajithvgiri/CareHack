@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="softfruit.solutions.quickdoc">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeActionBar">
         <activity
-            android:name="softfruit.solutions.quickdoc.SplashActivity"
+            android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,19 +21,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PhoneAuthActivity"
+            android:name=".activity.authentication.PhoneAuthActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
         <activity
-            android:name=".PhoneVerificationActivity"
-            android:windowSoftInputMode="stateAlwaysVisible"
-            android:theme="@style/AppThemeNoActionBar" />
-
+            android:name=".activity.authentication.PhoneVerificationActivity"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="stateAlwaysVisible" />
         <activity
             android:name=".calendar.CalendarActivity"
             android:label="@string/title_activity_calendar"
-            android:theme="@style/AppThemeActionBar.NoActionBar"/>
-
+            android:theme="@style/AppThemeActionBar.NoActionBar" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_main"></activity>
     </application>
 
 </manifest>

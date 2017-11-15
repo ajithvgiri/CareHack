@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="softfruit.solutions.quickdoc.PhoneAuthActivity">
+    tools:context="softfruit.solutions.quickdoc.activity.authentication.PhoneAuthActivity">
 
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/fab_margin"
         android:padding="@dimen/fab_margin"
             android:layout_height="wrap_content"
             android:src="@drawable/logo" />

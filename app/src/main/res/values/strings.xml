@@ -8,4 +8,8 @@
     <string name="title_activity_calendar">CalendarActivity</string>
     <string name="otp">OTP</string>
     <string name="enter_otp">Enter OTP</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
