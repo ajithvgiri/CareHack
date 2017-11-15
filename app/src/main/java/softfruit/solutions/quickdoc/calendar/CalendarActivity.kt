@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_calendar.*
-import softfruit.solutions.carehack.R
+import softfruit.solutions.quickdoc.R
 
 
 class CalendarActivity : AppCompatActivity() {

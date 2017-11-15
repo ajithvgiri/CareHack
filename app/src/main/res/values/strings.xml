@@ -6,4 +6,6 @@
     <string name="_91">+91</string>
     <string name="continue_">Continue</string>
     <string name="title_activity_calendar">CalendarActivity</string>
+    <string name="otp">OTP</string>
+    <string name="enter_otp">Enter OTP</string>
 </resources>
