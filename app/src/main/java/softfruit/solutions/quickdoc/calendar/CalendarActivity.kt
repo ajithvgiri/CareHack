@@ -1,4 +1,4 @@
-package softfruit.solutions.carehack.calendarevent
+package softfruit.solutions.quickdoc.calendar
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar

@@ -19,21 +19,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="softfruit.solutions.quickdoc.PhoneAuthActivity"
+            android:name=".PhoneAuthActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
-<<<<<<< HEAD
+
         <activity
             android:name=".PhoneVerificationActivity"
             android:theme="@style/AppThemeNoActionBar" />
+
         <activity
-            android:name=".calendarevent.CalendarActivity"
+            android:name=".calendar.CalendarActivity"
             android:label="@string/title_activity_calendar"
-            android:theme="@style/AppThemeActionBar.NoActionBar"></activity>
-=======
-        <activity android:name="softfruit.solutions.quickdoc.PhoneVerificationActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
->>>>>>> ac93954cac9a2467b8204da8d413715ddec77e1e
+            android:theme="@style/AppThemeActionBar.NoActionBar" />
+
+
     </application>
 
 </manifest>
