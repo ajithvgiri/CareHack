@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+<<<<<<< HEAD
+    tools:context="softfruit.solutions.carehack.softfruit.solutions.quickdoc.calendar.CalendarActivity"
+=======
     tools:context=".calendar.CalendarActivity"
+>>>>>>> dbecc554327c0d72cfd761d73905bc15a29de674
     tools:showIn="@layout/activity_calendar">
 
 

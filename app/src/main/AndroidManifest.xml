@@ -22,7 +22,6 @@
             android:name=".PhoneAuthActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
-
         <activity
             android:name=".PhoneVerificationActivity"
             android:windowSoftInputMode="stateAlwaysVisible"
@@ -31,8 +30,7 @@
         <activity
             android:name=".calendar.CalendarActivity"
             android:label="@string/title_activity_calendar"
-            android:theme="@style/AppThemeActionBar.NoActionBar" />
-
+            android:theme="@style/AppThemeActionBar.NoActionBar"/>
 
     </application>
 
