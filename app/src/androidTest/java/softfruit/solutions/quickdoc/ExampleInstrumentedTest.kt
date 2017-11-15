@@ -1,4 +1,4 @@
-package softfruit.solutions.carehack
+package softfruit.solutions.quickdoc
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
