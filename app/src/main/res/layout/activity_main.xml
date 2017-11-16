@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="softfruit.solutions.quickdoc.activity.MainActivity">
+    tools:context="softfruit.solutions.carehack.activity.MainActivity">
 
     <include layout="@layout/toolbar_layout" />
 

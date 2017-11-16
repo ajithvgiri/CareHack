@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="softfruit.solutions.quickdoc.fragments.HomeFragment">
+    tools:context="softfruit.solutions.carehack.fragments.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

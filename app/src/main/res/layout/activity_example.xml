@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/content"
-    tools:context="softfruit.solutions.quickdoc.Example">
+    tools:context="softfruit.solutions.carehack.Example">
 
 
 </android.support.constraint.ConstraintLayout>
