@@ -10,19 +10,25 @@ import android.view.View
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_profile.*
 import softfruit.solutions.quickdoc.R
 import softfruit.solutions.quickdoc.activity.MainActivity
 import softfruit.solutions.quickdoc.model.User
+import softfruit.solutions.quickdoc.utils.Utils
 import java.io.ByteArrayOutputStream
 import java.io.IOException
+
 
 class ProfileActivity : AppCompatActivity() {
 
 
+    val TAG: String = "ProfileActivity";
     //Cloud Storage
     val storage = FirebaseStorage.getInstance()
 
@@ -43,9 +49,30 @@ class ProfileActivity : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
     val mDatabase = database.getReference("QuickDoc")
 
+    val reference = mDatabase.orderByChild("users")
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+        reference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot != null) {
+                    Utils.instance.makeLogd(TAG, "dataSnapshot " + dataSnapshot.value.toString())
+                    Utils.instance.makeLogd(TAG, "dataSnapshot " + dataSnapshot.child("users").child(FirebaseAuth.getInstance().uid))
+//                    dataSnapshot.child("users").children
+                    for (snapshot in dataSnapshot.child("users").children) {
+                        Utils.instance.makeLogd(TAG, "dataSnapshot " +snapshot.toString())
+
+                    }
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
+        })
 
         pick_a_photo.setOnClickListener(View.OnClickListener { imagePicker(1) })
         finish.setOnClickListener(View.OnClickListener {
