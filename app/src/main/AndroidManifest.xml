@@ -36,13 +36,16 @@
             android:name="softfruit.solutions.carehack.activity.MainActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
+            android:name="softfruit.solutions.carehack.activity.doctors.DoctorsActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name="softfruit.solutions.carehack.activity.booking.BookingActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+
+        <activity
             android:name="softfruit.solutions.carehack.calendar.CalendarActivity"
             android:label="@string/title_activity_calendar"
             android:theme="@style/AppThemeActionBar.NoActionBar" />
-        <activity
-            android:name="softfruit.solutions.carehack.activity.doctors.DoctorsActivity"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity android:name="softfruit.solutions.carehack.activity.booking.BookingActivity"></activity>
     </application>
 
 </manifest>
