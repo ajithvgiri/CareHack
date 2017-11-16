@@ -35,6 +35,7 @@ class PhoneAuthActivity : AppCompatActivity() {
             val intent = Intent(this@PhoneAuthActivity, PhoneVerificationActivity::class.java)
             intent.putExtra("credential", credential)
             startActivity(intent)
+            finish()
         }
 
         override fun onVerificationFailed(e: FirebaseException) {

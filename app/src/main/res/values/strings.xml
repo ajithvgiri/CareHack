@@ -11,11 +11,13 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="profile">Profile</string>
     <string name="enter_details">Enter Details</string>
     <string name="fullname">Full Name</string>
     <string name="age">Age</string>
     <string name="email">Email address</string>
     <string name="place">Place</string>
     <string name="finish_">Finish</string>
+    <string name="logout">Logout</string>
+
 </resources>
