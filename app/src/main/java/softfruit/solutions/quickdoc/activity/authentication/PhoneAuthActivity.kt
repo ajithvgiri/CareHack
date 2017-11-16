@@ -32,13 +32,18 @@ class PhoneAuthActivity : AppCompatActivity() {
             //     detect the incoming verification SMS and perform verificaiton without
             //     user action.
             Utils.instance.makeLogd(TAG, "onVerificationCompleted:" + credential)
-            //signInWithPhoneAuthCredential(credential)
+            val intent = Intent(this@PhoneAuthActivity, PhoneVerificationActivity::class.java)
+            intent.putExtra("credential", credential)
+            startActivity(intent)
         }
 
         override fun onVerificationFailed(e: FirebaseException) {
             // This callback is invoked in an invalid request for verification is made,
             // for instance if the the phone number format is not valid.
             Utils.instance.makeLogw(TAG, "onVerificationFailed" + e)
+            progressBar.visibility = View.GONE
+            sendOTP.isEnabled = true
+            phone_number.isEnabled = true
 
             if (e is FirebaseAuthInvalidCredentialsException) {
                 // Invalid request
@@ -89,6 +94,9 @@ class PhoneAuthActivity : AppCompatActivity() {
         sendOTP.setOnClickListener(View.OnClickListener {
             if (phone_number.text.toString().length == 10) {
                 phoneNumberAuth("+91" + phone_number.text.toString())
+                progressBar.visibility = View.VISIBLE
+                sendOTP.isEnabled = false
+                phone_number.isEnabled = false
             }
         })
     }

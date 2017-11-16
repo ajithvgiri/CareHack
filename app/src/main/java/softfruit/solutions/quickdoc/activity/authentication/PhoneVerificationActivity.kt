@@ -8,7 +8,6 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.*
 import kotlinx.android.synthetic.main.activity_phone_verification.*
 import softfruit.solutions.quickdoc.R
-import softfruit.solutions.quickdoc.activity.MainActivity
 import softfruit.solutions.quickdoc.utils.Utils
 
 class PhoneVerificationActivity : AppCompatActivity() {
@@ -16,13 +15,22 @@ class PhoneVerificationActivity : AppCompatActivity() {
     var TAG: String = "PhoneVerificationActivity"
     val mAuth = FirebaseAuth.getInstance()
     var mVerificationId: String = ""
+    lateinit var credential: PhoneAuthCredential
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone_verification)
 
         val extras = intent.extras
         if (extras != null) {
-            mVerificationId = extras.getString("mVerificationId")
+            if (extras.getString("mVerificationId") != null) {
+                mVerificationId = extras.getString("mVerificationId")
+            }
+
+            if (extras.get("credential") != null) {
+                credential = extras.get("credential") as PhoneAuthCredential
+                signInWithPhoneAuthCredential(credential!!)
+            }
+
         }
 
         verifyOTP.setOnClickListener(View.OnClickListener { verifyPhoneNumberWithCode(mVerificationId, pinEntryEditText.text.toString()) })
@@ -44,7 +52,7 @@ class PhoneVerificationActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
                         Utils.instance.makeLogd(TAG, "signInWithCredential:success")
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, ProfileActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                         startActivity(intent)
                         finish()
@@ -68,4 +76,5 @@ class PhoneVerificationActivity : AppCompatActivity() {
                 })
     }
     // [END sign_in_with_phone]
+
 }

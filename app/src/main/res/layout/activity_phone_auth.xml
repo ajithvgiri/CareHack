@@ -41,6 +41,7 @@
             android:layout_gravity="center"
             android:text="@string/_91"
             android:textSize="18sp"
+            android:theme="@style/TextLabelDark"
             android:textStyle="bold" />
 
         <EditText
@@ -48,7 +49,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:theme="@style/TextLabelDark"
             android:hint="@string/xxx_xxx_xxxx"
+
             android:inputType="phone"
             android:cursorVisible="false"
             android:textSize="18sp" />
@@ -64,6 +67,14 @@
         android:text="@string/continue_"
         android:textAllCaps="false"
         android:textColor="@color/colorText" />
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="16dp" />
 
 
 </LinearLayout>
