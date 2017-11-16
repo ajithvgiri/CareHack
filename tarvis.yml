@@ -1,4 +1,4 @@
-language: kotlin
+language: android
 rvm:
  - 2.2
  - jruby
