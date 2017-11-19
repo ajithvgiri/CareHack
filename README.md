@@ -1,5 +1,5 @@
 # CareHack Entry Challenge Application
-Entry Level Application for a carehack hackathon hosted by CareStack
+Entry Level Application for  CareHack hackathon hosted by CareStack
 
 
 ## Functionalities
