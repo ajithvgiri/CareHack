@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import softfruit.solutions.carehack.R
+import softfruit.solutions.carehack.fragments.BookingFragment
 import softfruit.solutions.carehack.fragments.HomeFragment
 import softfruit.solutions.carehack.fragments.ProfileFragment
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
+                changeFragment(BookingFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
@@ -50,6 +52,11 @@ class MainActivity : AppCompatActivity() {
 
         // Commit the transaction
         transaction.commit()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
     }
 
 

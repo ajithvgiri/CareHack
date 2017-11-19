@@ -6,4 +6,5 @@
     <color name="colorText">@android:color/white</color>
     <color name="colorBackground">@android:color/background_light</color>
     <color name="colorTextGrey">#9B9B9B</color>
+    <color name="colorIconInactive">#D5D5D5</color>
 </resources>

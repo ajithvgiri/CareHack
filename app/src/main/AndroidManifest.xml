@@ -3,6 +3,8 @@
     package="softfruit.solutions.carehack">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
 
     <application
         android:allowBackup="true"
@@ -12,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeActionBar">
         <activity
-            android:name="softfruit.solutions.carehack.SplashActivity"
+            android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,31 +23,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="softfruit.solutions.carehack.activity.authentication.PhoneAuthActivity"
+            android:name=".activity.authentication.PhoneAuthActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
         <activity
-            android:name="softfruit.solutions.carehack.activity.authentication.PhoneVerificationActivity"
+            android:name=".activity.authentication.PhoneVerificationActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="stateAlwaysVisible" />
         <activity
-            android:name="softfruit.solutions.carehack.activity.authentication.ProfileActivity"
+            android:name=".activity.authentication.ProfileActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="softfruit.solutions.carehack.activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name="softfruit.solutions.carehack.activity.doctors.DoctorsActivity"
+            android:name=".activity.doctors.DoctorsActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name="softfruit.solutions.carehack.activity.booking.BookingActivity"
+            android:name=".activity.booking.BookingActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.booking.BookingConfirmed"
             android:theme="@style/AppThemeNoActionBar" />
 
-        <activity
-            android:name="softfruit.solutions.carehack.calendar.CalendarActivity"
-            android:label="@string/title_activity_calendar"
-            android:theme="@style/AppThemeActionBar.NoActionBar" />
+
+
     </application>
 
 </manifest>

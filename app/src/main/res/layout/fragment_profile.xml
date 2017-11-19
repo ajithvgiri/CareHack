@@ -26,40 +26,31 @@
 
 
         <TextView
+            android:id="@+id/fullnameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="4dp"
-            android:text="Muhammed Riyas"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/placeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="4dp"
-            android:text="+91 8111951972"
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/ageText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="4dp"
-            android:text="kmlriyas@gmail.com"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingTop="4dp"
-            android:text="22 years "
             android:textSize="14sp" />
 
     </LinearLayout>

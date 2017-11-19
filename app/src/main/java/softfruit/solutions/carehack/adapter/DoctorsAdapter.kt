@@ -2,11 +2,14 @@ package softfruit.solutions.carehack.adapter
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import softfruit.solutions.carehack.R
+import softfruit.solutions.carehack.activity.booking.BookingActivity
 import softfruit.solutions.carehack.model.Doctors
 
 /**
@@ -24,11 +27,13 @@ class DoctorsAdapter(internal var activity: Activity, internal var doctors: List
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val doctor = doctors[position]
-//        holder.categoryTitle.text = doctor.name
+//        holder.slotTitle.text = doctor.name
 //        holder.categoryIcon.setImageResource(doctors.icon)
-//        holder.categoryCard.setOnClickListener(View.OnClickListener {
+//        holder.slotCard.setOnClickListener(View.OnClickListener {
 //            Toast.makeText(activity, "" + position, Toast.LENGTH_LONG).show()
 //        })
+        holder.doctorCard.setOnClickListener(View.OnClickListener { activity.startActivity(Intent(activity, BookingActivity::class.java)) })
+
     }
 
     override fun getItemCount(): Int {
@@ -36,14 +41,13 @@ class DoctorsAdapter(internal var activity: Activity, internal var doctors: List
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        var categoryTitle: TextView
-//        var categoryCard: CardView
+//        var slotTitle: TextView
+var doctorCard: CardView = itemView.findViewById<View>(R.id.doctorCard) as CardView
 //        var categoryIcon: ImageView
 
         init {
-//            categoryTitle = itemView.findViewById<View>(R.id.categoryTitle) as TextView
-//            categoryCard = itemView.findViewById<View>(R.id.categoryCard) as CardView
-//            categoryIcon = itemView.findViewById<View>(R.id.categoryIcon) as ImageView
+//            slotTitle = itemView.findViewById<View>(R.id.slotTitle) as TextView
+            //            categoryIcon = itemView.findViewById<View>(R.id.categoryIcon) as ImageView
         }
     }
 

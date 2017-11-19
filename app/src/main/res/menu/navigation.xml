@@ -4,12 +4,13 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:title="@string/my_bookings" />
 
     <item
         android:id="@+id/navigation_dashboard"
+        android:checked="true"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:title="@string/make_appointment" />
 
     <item
         android:id="@+id/navigation_profile"

@@ -37,9 +37,11 @@
                 app:border_width="3dp" />
 
             <ImageView
+                android:id="@+id/camera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
+                android:layout_gravity="center"
+                android:tint="@color/colorBackground"
                 app:srcCompat="@drawable/ic_add_a_photo" />
         </FrameLayout>
 
@@ -49,8 +51,38 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <android.support.design.widget.TextInputLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/choose_your_gender"
+                android:textColor="@color/colorTextGrey" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:layout_marginRight="8dp"
+                    android:tint="@color/colorIconInactive"
+                    app:srcCompat="@drawable/ic_gende_male" />
+
+                <ImageView
+                    android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:tint="@color/colorIconInactive"
+                    app:srcCompat="@drawable/ic_gender_female" />
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="42dp"
@@ -62,7 +94,7 @@
                     android:id="@+id/fullnameText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/fullname"
+                    android:hint="@string/full_name"
                     android:inputType="textPersonName"
                     android:textColor="@android:color/darker_gray" />
 
@@ -87,23 +119,6 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="42dp"
-                android:layout_marginStart="42dp"
-                android:theme="@style/TextLabelDark"
-                app:errorTextAppearance="@style/error_appearance_accent">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/emailText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/email"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@android:color/darker_gray" />
-
-            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -132,7 +147,6 @@
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
             android:background="@drawable/button_shape"
-            android:maxLength="10"
             android:text="@string/finish_"
             android:textAllCaps="false"
             android:textColor="@color/colorText" />

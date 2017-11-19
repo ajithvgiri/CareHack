@@ -2,9 +2,12 @@ package softfruit.solutions.carehack.activity.authentication
 
 import android.app.Activity
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.google.android.gms.tasks.OnFailureListener
@@ -28,7 +31,7 @@ import java.io.IOException
 class ProfileActivity : AppCompatActivity() {
 
 
-    val TAG: String = "ProfileActivity";
+    val TAG: String = "ProfileActivity"
     //Cloud Storage
     val storage = FirebaseStorage.getInstance()
 
@@ -49,21 +52,32 @@ class ProfileActivity : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
     val mDatabase = database.getReference("QuickDoc")
 
-    val reference = mDatabase.orderByChild("users")
+
+    var profileImageUrl: String = ""
+
+    var gender: Boolean = true
+
+    override fun onStart() {
+        super.onStart()
+        if (FirebaseAuth.getInstance().uid == null) {
+            startActivity(Intent(this, PhoneAuthActivity::class.java))
+            finish()
+        }
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        reference.addValueEventListener(object : ValueEventListener {
+        mDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot != null) {
                     Utils.instance.makeLogd(TAG, "dataSnapshot " + dataSnapshot.value.toString())
-                    Utils.instance.makeLogd(TAG, "dataSnapshot " + dataSnapshot.child("users").child(FirebaseAuth.getInstance().uid))
+                    //Utils.instance.makeLogd(TAG, "dataSnapshot " + dataSnapshot.child("users").child(FirebaseAuth.getInstance().uid))
 //                    dataSnapshot.child("users").children
                     for (snapshot in dataSnapshot.child("users").children) {
-                        Utils.instance.makeLogd(TAG, "dataSnapshot " +snapshot.toString())
+                        Utils.instance.makeLogd(TAG, "dataSnapshot " + snapshot.toString())
 
                     }
                 }
@@ -74,12 +88,36 @@ class ProfileActivity : AppCompatActivity() {
             }
         })
 
-        pick_a_photo.setOnClickListener(View.OnClickListener { imagePicker(1) })
+        pick_a_photo.setOnClickListener(View.OnClickListener {
+            imagePicker(1)
+            camera.visibility = View.GONE
+        })
         finish.setOnClickListener(View.OnClickListener {
             if (fullnameText.text.toString().length < 4) {
 
             }
             uploadProfileImage()
+        })
+
+
+        male.setOnClickListener(View.OnClickListener {
+            if (gender) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    male.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.colorPrimary))
+                    female.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.colorIconInactive))
+                }
+                gender = false
+            }
+        })
+
+        female.setOnClickListener(View.OnClickListener {
+            if (!gender) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    female.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.colorPrimary))
+                    male.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.colorIconInactive))
+                }
+                gender = true
+            }
         })
     }
 
@@ -98,9 +136,8 @@ class ProfileActivity : AppCompatActivity() {
             val uri = data.data
             when (requestCode) {
                 1 -> {
-                    var bitmap: Bitmap? = null
                     try {
-                        bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
+                        val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
                         profile_image.setImageBitmap(bitmap)
                     } catch (e: IOException) {
                         e.printStackTrace()
@@ -123,13 +160,15 @@ class ProfileActivity : AppCompatActivity() {
         profileRef = imagesRef.child("profile/" + FirebaseAuth.getInstance().uid + ".jpg")
 
         val uploadTask = profileRef!!.putBytes(data)
-        uploadTask.addOnFailureListener(OnFailureListener { exception ->
+        uploadTask.addOnFailureListener(OnFailureListener {
             // Handle unsuccessful uploads
             profileImage = false
             uploadProfileDetails()
         }).addOnSuccessListener(OnSuccessListener<Any> { taskSnapshot ->
             // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
-            val downloadUrl = taskSnapshot
+            profileImageUrl = taskSnapshot.toString()
+            Utils.instance.makeLogd(TAG, "download url " + taskSnapshot.toString())
+            Utils.instance.makeLogd(TAG, "download url " + taskSnapshot)
             profileImage = true
             uploadProfileDetails()
         })
@@ -138,12 +177,12 @@ class ProfileActivity : AppCompatActivity() {
     private fun uploadProfileDetails() {
         var profileImageUrl = profileDefaultRef.toString()
         if (profileImage) {
-            profileImageUrl = profileRef.toString()
+            profileImageUrl = profileImageUrl
         }
 
         val user = User(FirebaseAuth.getInstance().uid.toString(),
                 fullnameText.text.toString(),
-                ageText.text.toString(), emailText.text.toString(), placeText.text.toString(), profileImageUrl)
+                ageText.text.toString(), placeText.text.toString(), profileImageUrl)
 
         mDatabase.child("users").child(FirebaseAuth.getInstance().uid).setValue(user)
 

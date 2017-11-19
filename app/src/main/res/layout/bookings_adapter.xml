@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
-    android:id="@+id/doctorCard"
+    android:id="@+id/bookingCard"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -28,21 +28,6 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dr. Nimisha Anil"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MBBS, MD Gynacology"
-                    android:textColor="@color/colorTextGrey"
-                    android:textSize="14sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -73,22 +58,42 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/bookingTime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="MONDAY- THURSDAY"
+                                android:text="4:30 PM"
                                 android:textColor="@android:color/primary_text_light"
-                                android:textSize="10sp" />
+                                android:textSize="14sp" />
 
                             <TextView
+                                android:id="@+id/bookingDate"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="9.30 AM - 4.30 PM"
+                                android:text="Nov 12 2017"
                                 android:textColor="@android:color/primary_text_light"
-                                android:textSize="10sp" />
+                                android:textSize="14sp" />
 
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/bookingDoctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Nimisha Anil"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MBBS, MD Gynacology"
+                    android:textColor="@color/colorTextGrey"
+                    android:textSize="12sp" />
+
+
             </LinearLayout>
 
 

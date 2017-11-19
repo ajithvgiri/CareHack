@@ -28,7 +28,7 @@ class PhoneVerificationActivity : AppCompatActivity() {
 
             if (extras.get("credential") != null) {
                 credential = extras.get("credential") as PhoneAuthCredential
-                signInWithPhoneAuthCredential(credential!!)
+                signInWithPhoneAuthCredential(credential)
             }
 
         }

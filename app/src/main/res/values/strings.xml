@@ -9,20 +9,61 @@
     <string name="otp">OTP</string>
     <string name="enter_otp">Enter OTP</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="my_bookings">My Bookings</string>
     <string name="profile">Profile</string>
     <string name="enter_details">Enter Details</string>
-    <string name="fullname">Full Name</string>
+    <string name="full_name">Full Name</string>
     <string name="age">Age</string>
     <string name="email">Email address</string>
     <string name="place">Place</string>
     <string name="finish_">Finish</string>
     <string name="logout">Logout</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="select_a_procedure_to_book_appointment">Select a procedure to book appointment</string>
     <string name="slide_to_choose_a_date_and_slot">Slide to choose a date and slot</string>
+    <string name="choose_your_gender">Choose your gender</string>
+    <string name="make_appointment">Make Appointment</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="thank_you">Thank You</string>
+    <string name="your_booking_has_been_confirmed">Your booking has been confirmed</string>
+    <string name="booking_id">Booking ID</string>
+    <string name="add_to_my_calendar">Add to my calendar</string>
+    <string name="calendar_permission">Calendar Permission is required</string>
+    <string name="successfully_added_to_calendar">Successfully added to your calendar</string>
+
+    <string-array name="dates">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
 
 </resources>
