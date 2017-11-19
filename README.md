@@ -1,4 +1,4 @@
-# QuickDoc
+# CareHack Entry Challenge Application
 Entry Level Application for a carehack hackathon hosted by CareStack
 
 
