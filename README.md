@@ -9,4 +9,4 @@ Entry Level Application for a carehack hackathon hosted by CareStack
  4. Add appointment to Google Calendar
 
 ### Download APK
-[APP](https://github.com/ajithvgiri/CareHack/app/app-debug.apk)
+[APP](https://raw.githubusercontent.com/ajithvgiri/CareHack/master/app/app-debug.apk)
